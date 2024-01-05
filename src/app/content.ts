@@ -36,11 +36,12 @@ const tooltipEvent = async (selection: Selection) => {
       //     });
       //   });
       chrome.runtime.sendMessage({ selectedText }, (response) => {
+        tooltipRoot.innerText = response
         if (chrome.runtime.lastError) {
           // Handle the error, as the context might be invalidated
           console.error('Error sending message:', chrome.runtime.lastError)
         } else {
-          console.log(selectedText, response)
+          console.log(response)
         }
       })
     }

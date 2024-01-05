@@ -17,7 +17,13 @@
     "service_worker": "js/background.js",
     "type": "module"
   },
-  "permissions": ["tabs"],
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "declarativeContent",
+    "scripting"
+  ],
   "content_scripts": [
     {
       "matches": ["https://*/*"],
